@@ -12,15 +12,15 @@ public class WorkoutController {
     private ICoach coach2;
 
     @Autowired
+    public WorkoutController(ICoach Coach) {
+        coach = Coach;
+    }
+
+    @Autowired
     @Qualifier("tennisCoach")
     public void setCoach2(ICoach coach)
     {
         this.coach2 = coach;
-    }
-
-    @Autowired
-    public WorkoutController(@Qualifier("footballCoach") ICoach Coach) {
-        coach = Coach;
     }
 
     @GetMapping("/")
