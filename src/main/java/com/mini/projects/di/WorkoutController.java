@@ -18,8 +18,4 @@ public class WorkoutController {
         return this.coach.getDailyWorkout();
     }
 
-    @GetMapping("/test")
-    public String getDailyWorko(){
-        return "test";
-    }
 }
