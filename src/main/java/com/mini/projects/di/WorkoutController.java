@@ -8,28 +8,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WorkoutController {
-    private ICoach coach;
-    private ICoach coach2;
+    private ICoach footballCoach;
+    private ICoach tennisCoach;
+    private ICoach swimCoach;
 
     @Autowired
-    public WorkoutController(ICoach Coach) {
-        coach = Coach;
+    public WorkoutController(ICoach coach, @Qualifier("swimmingCoach")ICoach swimCoach) {
+        this.footballCoach = coach;
+        this.swimCoach = swimCoach;
     }
 
     @Autowired
     @Qualifier("tennisCoach")
-    public void setCoach2(ICoach coach)
+    public void setTennisCoach(ICoach coach)
     {
-        this.coach2 = coach;
+        this.tennisCoach = coach;
     }
 
     @GetMapping("/")
-    public String getDailyWorkout(){
-        return this.coach.getDailyWorkout();
+    public String getDailyWorkoutFootball(){
+        return this.footballCoach.getDailyWorkout();
     }
 
-    @GetMapping("/setter")
-    public String getDailyWorkout2(){
-        return this.coach2.getDailyWorkout();
+    @GetMapping("/tennis")
+    public String getDailyWorkoutTennis(){
+        return this.tennisCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/swim")
+    public String getDailyWorkoutSwim(){
+        return this.swimCoach.getDailyWorkout();
     }
 }
