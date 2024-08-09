@@ -1,22 +1,25 @@
 package com.mini.projects.di;
 
+import com.mini.projects.di.Coach.ICoach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WorkoutController {
-    private Coach coach;
-    private Coach coach2;
+    private ICoach coach;
+    private ICoach coach2;
 
     @Autowired
-    public void setCoach2(Coach coach)
+    @Qualifier("tennisCoach")
+    public void setCoach2(ICoach coach)
     {
         this.coach2 = coach;
     }
 
     @Autowired
-    public WorkoutController(Coach Coach) {
+    public WorkoutController(@Qualifier("footballCoach") ICoach Coach) {
         coach = Coach;
     }
 

@@ -1,9 +1,9 @@
-package com.mini.projects.di;
+package com.mini.projects.di.Coach;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach  implements Coach{
+public class CricketCoach  implements ICoach {
 
     public CricketCoach(){
 
