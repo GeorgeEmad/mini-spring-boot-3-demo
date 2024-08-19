@@ -1,7 +1,7 @@
-package com.mini.projects.di.Config;
+package com.mini.projects.di.config;
 
-import com.mini.projects.di.Coach.ICoach;
-import com.mini.projects.di.Coach.SwimCoach;
+import com.mini.projects.di.coach.ICoach;
+import com.mini.projects.di.coach.SwimCoach;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

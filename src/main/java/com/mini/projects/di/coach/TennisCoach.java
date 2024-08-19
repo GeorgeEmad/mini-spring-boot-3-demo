@@ -1,4 +1,4 @@
-package com.mini.projects.di.Coach;
+package com.mini.projects.di.coach;
 
 import org.springframework.stereotype.Component;
 

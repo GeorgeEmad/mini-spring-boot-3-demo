@@ -1,6 +1,6 @@
-package com.mini.projects.di;
+package com.mini.projects.di.controllers;
 
-import com.mini.projects.di.Coach.ICoach;
+import com.mini.projects.di.coach.ICoach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;

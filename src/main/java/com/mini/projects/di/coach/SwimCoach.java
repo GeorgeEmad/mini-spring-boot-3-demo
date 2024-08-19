@@ -1,6 +1,4 @@
-package com.mini.projects.di.Coach;
-
-import org.springframework.stereotype.Component;
+package com.mini.projects.di.coach;
 
 public class SwimCoach implements ICoach {
 
