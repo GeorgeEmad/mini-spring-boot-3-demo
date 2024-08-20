@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class DiApplication {
 
@@ -36,6 +38,11 @@ public class DiApplication {
 
 		// display id of the saved student
 		System.out.println("Saved student. Generated id: " + tempStudent.getId());
+
+		List<Student> students = studentDAO.findAll();
+		for (Student student: students){
+			System.out.println(student);
+		}
 	}
 
 }

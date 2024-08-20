@@ -23,6 +23,8 @@ public class Student {
 
     //constructors
 
+    public Student(){}
+
     public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -64,7 +66,6 @@ public class Student {
     }
 
     //toString() method
-
 
     @Override
     public String toString() {
