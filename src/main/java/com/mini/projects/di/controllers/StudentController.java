@@ -2,6 +2,7 @@ package com.mini.projects.di.controllers;
 
 import com.mini.projects.di.dao.StudentDao;
 import com.mini.projects.di.dto.StudentDto;
+import com.mini.projects.di.exceptions.StudentNotFoundException;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,9 @@ public class StudentController {
 
     @GetMapping("/{firstName}")
     public Optional<StudentDto> getByFirstName(@PathVariable String firstName){
+        if(firstName.equals("exception")){
+            throw new StudentNotFoundException("Student name not found " + firstName);
+        }
         return students.stream().filter(x -> Objects.equals(x.getFirstName(), firstName)).findFirst();
     }
 }
